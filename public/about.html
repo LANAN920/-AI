@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 - HK ANS AI 助手</title>
+    <style>
+        /* 复用index.html的header和footer样式 */
+        /* ... 前面的样式相同 ... */
+
+        .about-content {
+            max-width: 800px;
+            margin: 120px auto 60px;
+            padding: 0 20px;
+        }
+
+        .about-content h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .about-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .team-section {
+            margin-top: 60px;
+            padding: 40px;
+            background: #24253a;
+            border-radius: 12px;
+        }
+
+        .team-member-card {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 30px;
+            background: #2a2c44;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .member-avatar img {
+            width: 120px;
+            height: 120px;
+            border-radius: 60px;
+            border: 3px solid #7c5cff;
+            transition: transform 0.3s ease;
+        }
+
+        .member-avatar img:hover {
+            transform: scale(1.05);
+        }
+
+        .member-info h3 {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .member-titles {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .member-titles span {
+            color: #a9adc1;
+            font-size: 16px;
+            padding: 4px 12px;
+            background: rgba(124, 92, 255, 0.1);
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .contact-info {
+            margin-top: 60px;
+            padding: 30px;
+            background: #f5f7fa;
+            border-radius: 8px;
+        }
+
+        /* 修改导航栏，添加头像 */
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links .user-profile {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            padding: 5px 15px;
+            background: rgba(124, 92, 255, 0.1);
+            border-radius: 25px;
+            gap: 10px;
+        }
+
+        .user-profile img {
+            width: 36px;
+            height: 36px;
+            border-radius: 18px;
+            border: 2px solid #7c5cff;
+        }
+
+        .user-profile .title {
+            color: #a9adc1;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">HK ANS AI</div>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="about.html">关于我们</a>
+                <a href="login.html" class="login-btn">登录</a>
+                <div class="user-profile">
+                    <img src="images/bruce-liu.jpg" alt="Bruce Liu">
+                    <span class="title">首席执行官</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="about-content">
+        <h1>关于 HK ANS AI</h1>
+        <p>HK ANS AI 是一家专注于人工智能对话服务的科技公司。我们致力于为用户提供最先进、最智能的AI对话体验。</p>
+        
+        <p>我们的使命是让每个人都能便捷地获得AI助手的帮助，无论是学习、工作还是生活中的问题，都能得到及时、准确的解答。</p>
+
+        <div class="team-section">
+            <h2>我们的团队</h2>
+            <p>由充满激情的AI专家和工程师组成，致力于为您提供最好的服务。</p>
+            
+            <div class="team-member-card">
+                <div class="member-avatar">
+                    <img src="images/bruce-liu.jpg" alt="Bruce Liu">
+                </div>
+                <div class="member-info">
+                    <h3>Bruce Liu</h3>
+                    <div class="member-titles">
+                        <span>首席执行官 (CEO)</span>
+                        <span>技术总监 (CTO)</span>
+                        <span>产品经理</span>
+                        <span>首席开发工程师</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <h2>联系我们</h2>
+            <p>地址：香港特别行政区</p>
+            <p>电话：+852 XXXX XXXX</p>
+            <p>邮箱：support@hkans.com</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2024 HK ANS AI. 保留所有权利</p>
+        <p>联系我们：support@hkans.com</p>
+    </footer>
+</body>
+</html> 
