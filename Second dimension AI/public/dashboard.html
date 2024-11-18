@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HK ANS AI 助手 - 控制台</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .sidebar {
+            width: 200px;
+            background: #001529;
+            color: white;
+            padding: 20px 0;
+        }
+        
+        .menu-item {
+            padding: 12px 24px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .menu-item:hover {
+            background: #1890ff;
+        }
+        
+        .content {
+            flex: 1;
+            background: white;
+            padding: 20px;
+        }
+        
+        .header {
+            height: 64px;
+            background: white;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            justify-content: space-between;
+        }
+        
+        .chat-container {
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        
+        .message-list {
+            height: calc(100vh - 300px);
+            overflow-y: auto;
+            border: 1px solid #f0f0f0;
+            border-radius: 8px;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+        
+        .input-area {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .input-area textarea {
+            flex: 1;
+            height: 90px;
+            padding: 12px;
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+            resize: none;
+        }
+        
+        .send-btn {
+            width: 90px;
+            background: #1890ff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div class="sidebar">
+            <div class="menu-item" onclick="switchContent('chat')">AI 对话</div>
+            <div class="menu-item" onclick="switchContent('history')">历史记录</div>
+            <div class="menu-item" onclick="switchContent('settings')">设置</div>
+            <div class="menu-item" onclick="logout()">退出登录</div>
+        </div>
+        
+        <div class="main">
+            <div class="header">
+                <h2>AI 助手</h2>
+                <span id="username">admin</span>
+            </div>
+            
+            <div class="content" id="mainContent">
+                <!-- 内容区域 -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 检查登录状态
+        if(!sessionStorage.getItem('isLoggedIn')) {
+            window.location.href = '/index.html';
+        }
+        
+        function logout() {
+            sessionStorage.removeItem('isLoggedIn');
+            window.location.href = '/index.html';
+        }
+        
+        function switchContent(type) {
+            const content = document.getElementById('mainContent');
+            switch(type) {
+                case 'chat':
+                    content.innerHTML = getChatHTML();
+                    break;
+                case 'history':
+                    content.innerHTML = '<h3>历史记录</h3>';
+                    break;
+                case 'settings':
+                    content.innerHTML = '<h3>设置</h3>';
+                    break;
+            }
+        }
+        
+        function getChatHTML() {
+            return `
+                <div class="chat-container">
+                    <div class="message-list" id="messageList"></div>
+                    <div class="input-area">
+                        <textarea placeholder="输入消息，按Enter发送"></textarea>
+                        <button class="send-btn">发送</button>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // 初始化显示聊天界面
+        switchContent('chat');
+    </script>
+</body>
+</html> 
